@@ -32,7 +32,12 @@ const { dynamic = false } = Astro.props;
 			</defs>
 		</svg>
 	</div>
-	<div class="mt-0 w-screen max-w-screen-xl max-h-screen-xl mx-auto bg-[url('../images/The_Earth_seen_from_Apollo_17.jpg')] bg-no-repeat bg-center bg-cover">
+	<div class="mt-0 w-screen max-w-screen-xl max-h-screen-xl mx-auto relative overflow-hidden">
+		<video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover">
+		  <source src="../images/1851190-uhd_3840_2160_25fps.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		</video>
+		<div class="relative z-10">
 		<div class="mx-auto max-w-7xl">
 			<div class="mx-auto max-w-2xl text-center">
 				<div class=" py-5">
