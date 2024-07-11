@@ -8,7 +8,7 @@ import { t } from "i18next";
 export const menuitems = [
 	{
 		title: "Inicio",
-		path:"/animated",
+		path:"/",
 	},
 		/* children: [
 			{ title: "Subitem 1", path: "#" },
@@ -18,30 +18,30 @@ export const menuitems = [
 	},**/
 	{
 		title: "Quienes somos",
-		path: "/",
+		path: "/QuienesSomos",
 	},
 	,{
 		title: "Servicios",
-		path: "/",
+		path: "/Servicios",
 	},
 	{
 		title: "Blog",
-		path: "/",
+		path: "/blog",
 	},
 	{
 		title: "Contactanos",
-		path: "/",
+		path: "/contact",
 	},
 ];
 ---
 
 <div
 	x-data="{open: window.innerWidth < 768 ? false : true} "
-	class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8 z-10 md:pt-2 relative">
+	class="bg-black flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8 z-10 md:pt-2 relative">
 	<div class="p-4 flex flex-row items-center justify-between">
 		<a
 			href={localizePath("/")}
-			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
+			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
 
 			<Icon name="logo" width="30" class="dark:invert" alt="Logo" />
 			WAICA
@@ -56,12 +56,12 @@ export const menuitems = [
 				</span>
 				<span
 					aria-hidden="true"
-					class="block absolute h-0.5 w-5 bg-current transform transition duration-200 ease-in-out"
+					class="block absolute h-0.5 w-5 bg-white transform transition duration-200 ease-in-out"
 					:class="{'opacity-0': open } ">
 				</span>
 				<span
 					aria-hidden="true"
-					class="block absolute h-0.5 w-5 bg-current transform transition duration-200 ease-in-out"
+					class="block absolute h-0.5 w-5 bg-white transform transition duration-200 ease-in-out"
 					:class="{'-rotate-45': open, ' translate-y-1.5': !open}">
 				</span>
 			</div>
@@ -166,4 +166,3 @@ export const menuitems = [
 		</div>
 	</nav>
 </div>
-
