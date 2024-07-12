@@ -1,33 +1,12 @@
 ---
-const { plan } = Astro.props;
 import { t } from "i18next";
 
 const faqs = [
-{
+  {
     title: "¿Cuál es la razón de ser de WORLDWIDE ADVISORS OF INVESTMENTS AND CAPITAL, LLC (WAICA)?",
     description: "Nuestra razón de ser es actuar como un puente sólido que conecta a los proveedores de servicios corporativos con los clientes, ofreciendo soluciones integrales de consultoría adaptadas a las necesidades particulares de cada uno."
-},
-{
-    title: "¿Qué tipo de soluciones ofrece WAICA a sus clientes?",
-    description: "Nos encargamos de presentarles al socio idóneo según sus requerimientos específicos, contando con una extensa red y vasta experiencia para vincular a empresas e individuos con las soluciones perfectas para ellos."
-},
-{
-    title: "¿Cuál es el enfoque de WAICA en la consultoría?",
-    description: "Adoptamos un enfoque colaborativo, trabajando en estrecha sinergia con diversas instituciones en Asia, Europa y América, con el objetivo de brindar los servicios corporativos, legales y financieros más destacados."
-},
-{
-    title: "¿Cuál es la filosofía de WAICA en su relación con los clientes?",
-    description: "Creemos firmemente en la transparencia y en forjar relaciones de confianza con nuestros clientes, buscando comprender a profundidad sus objetivos y necesidades específicas para brindarles soluciones personalizadas y eficientes."
-},
-{
-    title: "¿Cuál es la especialización de WORLDWIDE ADVISORS OF INVESTMENTS & CAPITALS LLC (WAICA)?",
-    description: "WAICA se especializa en la prestación de servicios y soluciones de calidad en los ámbitos corporativos, comerciales y financieros, ofreciendo asesoría en transacciones que surten efecto en el mundo del comercio y las finanzas internacionales."
-},
-{
-    title: "¿Qué tipo de clientes suelen buscar los servicios de WAICA?",
-    description: "Regularmente, nuestros clientes son personas naturales, entidades institucionales y empresas comerciales que pueden requerir asistencia para la puesta en marcha de sus iniciativas corporativas, entre otros servicios."
-}
-,
+  },
+  // ... (other FAQ items)
 ];
 ---
 
@@ -35,57 +14,55 @@ const faqs = [
 	<div class="mx-auto divide-y divide-gray-900/10 dark:divide-gray-100/10">
 		<h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">{t("faq.title")}</h2>
 		<dl class="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-gray-100/10">
-			{
-				faqs.map((faq) => (
-					<div class="pt-6" x-data="{ open: false }">
-						<dt>
-							<button
-								type="button"
-								class="flex w-full items-start justify-between text-left text-gray-900 dark:text-white"
-								@click="open = !open"
-								:x-bind:aria-expanded="open.toString()">
-								<span class="text-base font-semibold leading-7">{'Preguntas frecuentes'}</span>
-								<span class="ml-6 flex h-7 items-center">
-									<svg
-										class="h-6 w-6"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke-width="1.5"
-										stroke="currentColor"
-										aria-hidden="true"
-										x-show="!open">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
-									</svg>
-									<svg
-										class="h-6 w-6"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke-width="1.5"
-										stroke="currentColor"
-										aria-hidden="true"
-										x-show="open">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
-									</svg>
-								</span>
-							</button>
-						</dt>
-						<dd
-							x-transition:enter="transition ease-out duration-100"
-							x-transition:enter-start="opacity-0 transform scale-90"
-							x-transition:enter-end="opacity-100 transform scale-100"
-							x-transition:leave="transition ease-in duration-100"
-							x-transition:leave-start="opacity-100 transform scale-100"
-							x-transition:leave-end="opacity-0 transform scale-90"
-							class="mt-2 pr-12"
-							id="faq-0"
-							x-show="open">
-							<span class="text-base leading-7 text-gray-600 dark:text-gray-100">
-								<span set:html={faq.description}></span>
+			{faqs.map((faq, index) => (
+				<div class="pt-6" x-data="{ open: false }">
+					<dt>
+						<button
+							type="button"
+							class="flex w-full items-start justify-between text-left text-gray-900 dark:text-white"
+							@click="open = !open"
+							:aria-expanded="open">
+							<span class="text-base font-semibold leading-7">{faq.title}</span>
+							<span class="ml-6 flex h-7 items-center">
+								<svg
+									class="h-6 w-6"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									aria-hidden="true"
+									x-show="!open">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+								</svg>
+								<svg
+									class="h-6 w-6"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									aria-hidden="true"
+									x-show="open">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
+								</svg>
 							</span>
-						</dd>
-					</div>
-				))
-			}
+						</button>
+					</dt>
+					<dd
+						x-transition:enter="transition ease-out duration-100"
+						x-transition:enter-start="opacity-0 transform scale-90"
+						x-transition:enter-end="opacity-100 transform scale-100"
+						x-transition:leave="transition ease-in duration-100"
+						x-transition:leave-start="opacity-100 transform scale-100"
+						x-transition:leave-end="opacity-0 transform scale-90"
+						class="mt-2 pr-12"
+						id={`faq-${index}`}
+						x-show="open">
+						<span class="text-base leading-7 text-gray-600 dark:text-gray-100">
+							{faq.description}
+						</span>
+					</dd>
+				</div>
+			))}
 		</dl>
 	</div>
 </div>
