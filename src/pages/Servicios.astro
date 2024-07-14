@@ -1,121 +1,80 @@
 ---
-import Container from "@components/container.astro";
-import Faq from "@components/faq.astro";
-import Features from "@components/features.astro";
-import Hero from "@components/hero.astro";
-import Newsletter from "@components/newsletter.astro";
 import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const services = [
+  {
+    title: "Asesoría Fiscal",
+    description: "Optimizamos tu situación fiscal y te mantenemos al día con las regulaciones.",
+    image: "/images/fiscal-advisory.jpg"
+  },
+  {
+    title: "Contabilidad",
+    description: "Llevamos tus libros contables con precisión y eficiencia.",
+    image: "/images/accounting.jpg"
+  },
+  {
+    title: "Auditoría",
+    description: "Realizamos auditorías exhaustivas para garantizar la salud financiera de tu empresa.",
+    image: "/images/auditing.jpg"
+  },
+  {
+    title: "Consultoría Empresarial",
+    description: "Te ayudamos a tomar decisiones estratégicas para el crecimiento de tu negocio.",
+    image: "/images/business-consulting.jpg"
+  },
+  {
+    title: "Declaraciones de Impuestos",
+    description: "Preparamos y presentamos tus declaraciones de impuestos de manera precisa y oportuna.",
+    image: "/images/tax-declarations.jpg"
+  },
+  {
+    title: "Nóminas",
+    description: "Gestionamos el proceso de nóminas de tu empresa, asegurando cumplimiento y eficiencia.",
+    image: "/images/payroll.jpg"
+  },
+  {
+    title: "Planeación Fiscal",
+    description: "Desarrollamos estrategias para optimizar tu carga fiscal de manera legal y eficiente.",
+    image: "/images/tax-planning.jpg"
+  },
+  {
+    title: "Constitución de Sociedades",
+    description: "Te asesoramos en el proceso de creación y registro de tu empresa.",
+    image: "/images/company-formation.jpg"
+  },
+  {
+    title: "Reestructuras Corporativas",
+    description: "Diseñamos e implementamos reestructuras para mejorar la eficiencia de tu organización.",
+    image: "/images/corporate-restructuring.jpg"
+  }
+];
 ---
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<Layout title="Servicios">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Nuestros Servicios</Fragment>
+      <Fragment slot="desc">
+        Soluciones integrales para el éxito de tu empresa
+      </Fragment>
+    </Sectionhead>
 
-<Layout>
-    <Container>
-        <div class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto">
-                <h1 class="text-4xl font-bold text-gray-900 mb-12 text-center">Nuestros servicios</h1>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-briefcase text-2xl text-blue-600 mr-3"></i>
-                                <h2 class="text-xl font-semibold text-gray-900">Consultoría Estratégica y Corporativa</h2>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                Ofrecemos servicios de consultoría en áreas legales, financieras, comerciales y administrativas para mejorar el desempeño y la rentabilidad de su organización.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-money-check-alt text-2xl text-green-600 mr-3"></i>
-                                <h2 class="text-xl font-semibold text-gray-900">Administración de Pagos</h2>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                Facilitamos transacciones comerciales seguras y eficientes, superando los desafíos de las políticas regulatorias actuales en el ámbito financiero internacional.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-globe text-2xl text-purple-600 mr-3"></i>
-                                <h2 class="text-xl font-semibold text-gray-900">Soluciones de Cobranza Internacional</h2>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                Gestionamos la recuperación de acreencias en operaciones de comercio internacional con un enfoque profesional y ético.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-credit-card text-2xl text-red-600 mr-3"></i>
-                                <h2 class="text-xl font-semibold text-gray-900">Soluciones de Pagos</h2>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                Ofrecemos programas de pago con tarjetas prepagadas y procesamiento de pagos para comercio en línea, adaptados a las necesidades de cada cliente.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-university text-2xl text-yellow-600 mr-3"></i>
-                                <h2 class="text-xl font-semibold text-gray-900">Asistencia en Trámites Bancarios y Financieros</h2>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                Guiamos a nuestros clientes en la gestión de cuentas bancarias, financiamiento de proyectos y soluciones de banca privada a nivel internacional.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-building text-2xl text-indigo-600 mr-3"></i>
-                                <h2 class="text-xl font-semibold text-gray-900">Formación de Fintech</h2>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                Asistimos en el proceso de licenciamiento y desarrollo de empresas fintech, ofreciendo soluciones innovadoras en el sector financiero tecnológico.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-warehouse text-2xl text-orange-600 mr-3"></i>
-                                <h2 class="text-xl font-semibold text-gray-900">Comercio Internacional</h2>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                Facilitamos el acceso a proveedores confiables y brindamos soluciones eficaces para la comercialización de productos a nivel internacional.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-handshake text-2xl text-teal-600 mr-3"></i>
-                                <h2 class="text-xl font-semibold text-gray-900">Brokerage Comercial</h2>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                Actuamos como intermediarios en operaciones de comercio internacional y mercados financieros, facilitando acuerdos comerciales beneficiosos.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-lightbulb text-2xl text-pink-600 mr-3"></i>
-                                <h2 class="text-xl font-semibold text-gray-900">Oportunidades de Negocios</h2>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                Conectamos a los clientes con oportunidades de alto potencial en sectores como energía, minería, petróleo y salud, ofreciendo soluciones personalizadas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-6xl mt-12">
+      {services.map((service) => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+          <img 
+            src={service.image}
+            alt={service.title}
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
+            <p class="text-gray-600 text-sm">{service.description}</p>
+          </div>
         </div>
-    </Container>
+      ))}
+    </div>
+  </Container>
 </Layout>
