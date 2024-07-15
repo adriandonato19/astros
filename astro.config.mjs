@@ -9,68 +9,59 @@ import alpinejs from "@astrojs/alpinejs";
 import AstroPWA from "@vite-pwa/astro";
 import icon from "astro-icon";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
-	site: "https://astros.zank.studio",
-	vite: {
-		define: {
-			__DATE__: `'${new Date().toISOString()}'`,
-		},
-	},
-	integrations: [
-		tailwind(),
-		sitemap(),
-		astroI18next(),
-		alpinejs(),
-		AstroPWA({
-			mode: "production",
-			base: "/",
-			scope: "/",
-			includeAssets: ["favicon.svg"],
-			registerType: "autoUpdate",
-			manifest: {
-				name: "Astros - Starter Template for Astro with Tailwind CSS",
-				short_name: "Astros",
-				theme_color: "#ffffff",
-				icons: [
-					{
-						src: "pwa-192x192.png",
-						sizes: "192x192",
-						type: "image/png",
-					},
-					{
-						src: "pwa-512x512.png",
-						sizes: "512x512",
-						type: "image/png",
-					},
-					{
-						src: "pwa-512x512.png",
-						sizes: "512x512",
-						type: "image/png",
-						purpose: "any maskable",
-					},
-				],
-			},
-			workbox: {
-				navigateFallback: "/404",
-				globPatterns: ["*.js"],
-			},
-			devOptions: {
-				enabled: false,
-				navigateFallbackAllowlist: [/^\/404$/],
-				suppressWarnings: true,
-			},
-		}),
-		icon(),
-	],
-	markdown: {
-		rehypePlugins: [
-			rehypeSlug,
-			// This adds links to headings
-			[rehypeAutolinkHeadings, autolinkConfig],
-		],
-	},
-	experimental: {
-		contentCollectionCache: true,
-	},
+  site: "https://astros.zank.studio",
+  vite: {
+    define: {
+      __DATE__: `'${new Date().toISOString()}'`
+    }
+  },
+  integrations: [tailwind(), sitemap(), astroI18next(), alpinejs(), AstroPWA({
+    mode: "production",
+    base: "/",
+    scope: "/",
+    includeAssets: ["favicon.svg"],
+    registerType: "autoUpdate",
+    manifest: {
+      name: "WORLDWIDE ADVISORS OF INVESTMENTS AND CAPITAL, LLC",
+      short_name: "WAICA",
+      theme_color: "#ffffff",
+      icons: [{
+        src: "pwa-192x192.png",
+        sizes: "192x192",
+        type: "image/png"
+      }, {
+        src: "pwa-512x512.png",
+        sizes: "512x512",
+        type: "image/png"
+      }, {
+        src: "pwa-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any maskable"
+      }]
+    },
+    workbox: {
+      navigateFallback: "/404",
+      globPatterns: ["*.js"]
+    },
+    devOptions: {
+      enabled: false,
+      navigateFallbackAllowlist: [/^\/404$/],
+      suppressWarnings: true
+    }
+  }), icon()],
+  markdown: {
+    rehypePlugins: [rehypeSlug,
+    // This adds links to headings
+    [rehypeAutolinkHeadings, autolinkConfig]]
+  },
+  experimental: {
+    contentCollectionCache: true
+  },
+  output: "server",
+  adapter: netlify()
 });

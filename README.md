@@ -52,7 +52,7 @@ You can either click on the button above to deploy to Cloudflare automatically, 
 You can leave build settings as defaults.
 
 <details>
-<summary>Cloudflare configuration</summary>
+<summary>Cloudflare configuratio</summary>
 
 ![Alt text](.github/images/image.png)
 

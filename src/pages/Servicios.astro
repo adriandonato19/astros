@@ -1,0 +1,121 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+
+const services = [
+  {
+    title: "CONSULTORIA ESTRATEGICA Y CORPORATIVA",
+    icon: "fas fa-briefcase",
+    content: "Nuestra Oficina WORLDWIDE ADVISORS OF INVESTMENTS & CAPITALS LLC, (WAICA), entiende perfectamente que las empresas modernas requieren servirse de la consultoría corporativa...",
+    image: "images/consulting.jpg"
+  },
+  {
+    title: "ADMINISTRACION DE PAGOS",
+    icon: "fas fa-money-check-alt",
+    content: "Las transacciones comerciales en la actualidad se encuentran constantemente sometidas a un cada vez mayo escrutinio, a consecuencia de las nuevas políticas regulatorias...",
+    image:"images/gestionpagos.jpg"
+  },
+  {
+    title: "SOLUCIONES DE COBRANZA INTERNACIONAL",
+    icon: "fas fa-globe",
+    content: "En WAICA, entendemos los desafíos que enfrentan las empresas al gestionar la recuperación de acreencias provenientes de operaciones de comercio internacional y servicios de intermediación...",
+    image:"images/pagointernacional.png"
+  },
+  {
+    title: "ASISTENCIA EN TRAMITES BANCARIOS Y FINANCIEROS",
+    icon: "fas fa-university",
+    content: "En WAICA, guiamos a nuestros clientes a través de las barreras de la burocracia y las formalidades bancarias para facilitar sus finanzas, asistiendo en la gestión de cuentas...",
+    image: "images/tramitesfinancieros.jpeg"
+  },
+  {
+    title: "FORMACION DE FINTECH",
+    icon: "fas fa-building",
+    content: "Nuestros servicios incluyen la posibilidad de ofrecerles una solución llave en mano para que el cliente corporativo o institucional, pueda obtener una licencia financiera específica...",
+    image:"images/fintech.webp"
+  },
+  {
+    title: "COMERCIO INTERNACIONAL",
+    icon: "fas fa-warehouse",
+    content: "WAICA, actúa también por solicitud de los clientes como un agente facilitador agregando valor al servicio, al ofrecerles la posibilidad de acceder a una fuente confiable de provisión de bienes y productos...",
+    image:"images/comercio.png" 
+  },
+  {
+    title: "BROKERAGE COMERCIAL",
+    icon: "fas fa-handshake",
+    content: "WAICA, se erige como agente intermediario en aquellas operaciones de comercio internacional de mercancías, productos y materias primas, en las cuales participa, brindando asistencia...",
+    image:"images/brokerage.jpeg"
+  },
+  {
+    title: "OPORTUNIDADES DE NEGOCIOS",
+    icon: "fas fa-lightbulb",
+    content: "El recurso humano que integra WORLDWIDE ADVISORS OF INVESTMENTS & CAPITALS LLC, (WAICA), ha visto incrementado notablemente su capacidad y conocimiento en el desarrollo de oportunidades de negocio...",
+    image: "images/oportunidades.jpg"
+  },
+];
+---
+
+<Layout>
+  <Container class="bg-gradient-to-r from-[#1e293b] to-[rgb(15,23,42)]">
+    <div class="max-w-4xl mx-auto py-12">
+      <h1 class="text-yellow-500 text-4xl font-bold mb-8 text-center">Nuestros servicios</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map((service, index) => (
+          <div class="bg-white rounded-lg shadow-md overflow-hidden" id={`service-${index}`}>
+            <img 
+              src={service.image || `/api/placeholder/400/300?text=${encodeURIComponent(service.title)}`} 
+              alt={service.title} 
+              class="w-full h-48 object-cover" 
+            />
+            <div class="p-6">
+              <h2 class="text-xl font-semibold mb-2 flex items-center">
+                <i class={`${service.icon} mr-2 text-yellow-500`}></i>
+                {service.title}
+              </h2>
+              <p class="text-gray-600 text-sm mb-4 content">{service.content.substring(0, 100)}...</p>
+              <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition duration-300">
+                Leer más
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .content {
+    transition: max-height 0.3s ease-out;
+    max-height: 4.5em;
+    overflow: hidden;
+  }
+  .content.expanded {
+    max-height: 1000px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const services = [
+      // ... (copy the services array from above)
+    ];
+
+    services.forEach((service, index) => {
+      const serviceElement = document.getElementById(`service-${index}`);
+      const button = serviceElement.querySelector('button');
+      const content = serviceElement.querySelector('.content');
+
+      button.addEventListener('click', () => {
+        if (content.classList.contains('expanded')) {
+          content.classList.remove('expanded');
+          content.textContent = service.content.substring(0, 100) + '...';
+          button.textContent = 'Leer más';
+        } else {
+          content.classList.add('expanded');
+          content.textContent = service.content;
+          button.textContent = 'Leer menos';
+        }
+      });
+    });
+  });
+</script>
