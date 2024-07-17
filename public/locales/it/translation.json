@@ -30,7 +30,8 @@
 		"giscus": "Un sistema di commenti alimentato da GitHub Discussions. Lascia che i visitatori lascino commenti e reazioni sul tuo sito web tramite GitHub!",
 		"decapcms": "Gestione dei contenuti open source per il tuo flusso di lavoro Git",
 		"rss": "RSS feed generato da @astrojs/rss",
-		"articlegenerator": "Usa l'inteligenza artificiale per generare gli articoli del tuo blog"
+		"articlegenerator": "Usa l'inteligenza artificiale per generare gli articoli del tuo blog",
+		"image": "/images/features-main.png"
 	},
 	"faq": {
 		"title": "Domande frequenti"
