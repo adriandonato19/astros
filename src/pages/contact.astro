@@ -1,77 +1,90 @@
 ---
-import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-import Button from "@components/ui/button.astro";
 import Layout from "@layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 
-changeLanguage("en");
+changeLanguage("es");
 
 const contacts = [
-	{
-		title: "Marketing",
-		email: "test@yourcompany.com",
-		phone: "+1 (555) 555-5555",
-	},
-	{
-		title: "Human Resources",
-		email: "test@yourcompany.com",
-		phone: "+1 (555) 555-5555",
-	},
-	{
-		title: "Finance",
-		email: "test@yourcompany.com",
-		phone: "+1 (555) 555-5555",
-	},
-	{
-		title: "Research and Development",
-		email: "test@yourcompany.com",
-		phone: "+1 (555) 555-5555",
-	},
+    {
+        title: "Investigación y Desarrollo",
+        email: "id@tuempresa.com",
+        phone: "+34 555 555 555",
+    },
+    {
+        title: "Atención al Cliente",
+        email: "soporte@tuempresa.com",
+        phone: "+34 555 555 556",
+    },
+    {
+        title: "Ventas",
+        email: "ventas@tuempresa.com",
+        phone: "+34 555 555 557",
+    },
 ];
 ---
 
-<Layout title="Contact">
-	<Container>
-		<Sectionhead>
-			<Fragment slot="title">Contact</Fragment>
-			<Fragment slot="desc">Get in Touch.</Fragment>
-		</Sectionhead>
+<Layout title="Contáctanos">
+    <main class="max-w-6xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center mb-4 text-gray-800 dark:text-white">Contáctanos</h1>
+        <p class="text-xl text-center mb-12 text-gray-600 dark:text-gray-300">Estamos aquí para ayudarte</p>
 
-		<div class="py-24 sm:py-32">
-			<div class="mx-auto max-w-7xl px-6 lg:px-8">
-				<div class="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
-					<div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
-						<div>
-							<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Departments</h2>
-							<p class="mt-4 leading-7 text-gray-600 dark:text-gray-200">Reach Out to Our Dedicated Teams.</p>
-						</div>
-						<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
-							{
-								contacts.map((item) => (
-									<div class="rounded-2xl bg-gray-50 dark:bg-stone-800 p-10">
-										<h3 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">{item.title}</h3>
-										<dl class="mt-3 space-y-1 text-sm leading-6 text-gray-600 dark:text-white">
-											<div>
-												<dt class="sr-only">Email</dt>
-												<dd>
-													<a class="font-semibold text-stone-600 dark:text-white" href="mailto:collaborate@example.com">
-														{item.email}
-													</a>
-												</dd>
-											</div>
-											<div class="mt-1">
-												<dt class="sr-only">Phone number</dt>
-												<dd>{item.phone}</dd>
-											</div>
-										</dl>
-									</div>
-								))
-							}
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</Container>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Información de contacto</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    ¿Tienes alguna pregunta o comentario? Estaremos encantados de atenderte. Rellena el formulario o contacta directamente con nuestros departamentos.
+                </p>
+                <div class="space-y-4">
+                    {contacts.map((item) => (
+                        <div class="flex flex-col">
+                            <h3 class="font-medium text-gray-800 dark:text-white">{item.title}</h3>
+                            <a href={`mailto:${item.email}`} class="text-blue-600 dark:text-blue-400 hover:underline">{item.email}</a>
+                            <span class="text-gray-600 dark:text-gray-300">{item.phone}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div>
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Envíanos un mensaje</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre completo</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                        />
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Correo electrónico</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                        />
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensaje</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                    >
+                        Enviar mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
 </Layout>
