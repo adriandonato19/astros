@@ -7,7 +7,7 @@ import { localizePath } from "astro-i18next";
 import { t } from "i18next";
 ---
 
-<footer class="pb-12 pt-28 dark:bg-stone-950">
+<footer class="bg-[#00155a] pb-12 pt-28 dark:bg-stone-950">
 	<div class="mx-auto max-w-6xl px-6 md:px-12 lg:px-6 xl:px-0">
 		<!-- DECOMMENT HERE IF YOU WANT YOUR LOGO IN THE FOOTER -->
 		<!-- <a href={localizePath("/")} aria-label="logo" class="group flex items-center justify-center space-x-2">
@@ -16,7 +16,7 @@ import { t } from "i18next";
 				Astros
 			</span>
 		</a> -->
-		<ul role="list" class="flex flex-wrap items-center justify-center gap-4 py-4 text-gray-600 dark:text-white sm:gap-8">
+		<ul role="list" class="flex flex-wrap items-center justify-center gap-4 py-4 text-white dark:text-white sm:gap-8">
 			<li role="listitem">
 				<a href={localizePath("/")} class="duration-300 hover:text-gray-900 dark:hover:text-gray-100">Inicio</a>
 			</li>
@@ -34,7 +34,7 @@ import { t } from "i18next";
 				)
 			}
 		</ul>
-		<div class="m-auto mt-4 flex w-max items-center justify-between space-x-4 text-gray-500 dark:text-white">
+		<div class="m-auto mt-4 flex w-max items-center justify-between space-x-4 text-white dark:text-white">
 			<a class="duration-300 hover:text-gray-900 dark:hover:text-gray-100" href="#" title="twitter" target="blank" aria-label="twitter">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="m-auto h-5 w-5" viewBox="0 0 16 16">
 					<path
@@ -66,7 +66,7 @@ import { t } from "i18next";
 			<ThemeSelector />
 		</div>
 		<div class="mt-4 text-center">
-			<span class="text-sm tracking-wide text-gray-500 dark:text-white">Copyright © WORLDWIDE ADVISORS OF INVESTMENTS &amp; CAPITALS LLC, (WAICA) 2024 - Presente. TODOS LOS DERECHOS RESERVADOS</span>
+			<span class="text-sm tracking-wide text-white dark:text-white">Copyright © WORLDWIDE ADVISORS OF INVESTMENTS &amp; CAPITALS LLC, (WAICA) 2024 - Presente. TODOS LOS DERECHOS RESERVADOS</span>
 		</div>
 	</div>
 </footer>
