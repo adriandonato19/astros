@@ -1,6 +1,6 @@
 ---
-import Container from "@components/container.astro";
-import Layout from "@layouts/Layout.astro";
+import Container from "../components/container.astro";
+import Layout from "../layouts/Layout.astro";
 
 const services = [
   {
@@ -10,9 +10,9 @@ const services = [
     image: "images/consulting.jpg"
   },
   {
-    title: "ADMINISTRACION DE PAGOS",
+    title: "ADMINISTRACION DE PAGOS y SOLUCIONES DE COBRANZA",
     icon: "fas fa-money-check-alt",
-    content: "Las transacciones comerciales en la actualidad se encuentran constantemente sometidas a un cada vez mayo escrutinio, a consecuencia de las nuevas políticas regulatorias que emanan de las autoridades gubernamentales a nivel global. WAICA ofrece a sus clientes empresariales una serie de mecanismos y herramientas que permiten dinamizar y fluidificar los procesos de pago de una manera eficiente y segura.",
+    content: "Las transacciones comerciales en la actualidad se encuentran constantemente sometidas a un cada vez mayo escrutinio, a consecuencia de las nuevas políticas regulatorias que emanan de las autoridades gubernamentales a nivel global. WAICA ofrece a sus clientes empresariales una serie de mecanismos y herramientas que permiten dinamizar y fluidificar los procesos de pago de una manera eficiente y segura. En WAICA, entendemos los desafíos que enfrentan las empresas al gestionar la recuperación de acreencias provenientes de operaciones de comercio internacional y servicios de intermediación. Nuestro equipo de expertos ofrece soluciones personalizadas para optimizar sus procesos de cobranza internacional, garantizando la eficiencia y minimizando los riesgos asociados a las transacciones transfronterizas.",
     image: "images/gestionpagos.jpg"
   },
   {
@@ -109,7 +109,7 @@ const services = [
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     const services = document.querySelectorAll('[id^="service-"]');
 
     services.forEach((service) => {

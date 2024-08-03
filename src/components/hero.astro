@@ -9,7 +9,8 @@ const carouselData = [
     image: null, 
     video: "../images/1851190-uhd_3840_2160_25fps.mp4",
     text: "Nuestra razón de ser",
-    subtext: "Conectar al cliente con los mejores proveedores de soluciones corporativas."},
+    subtext: "Conectar al cliente con los mejores proveedores de soluciones corporativas."
+  },
   { 
     image: "../images/honkong.jpg", 
     video: null,
@@ -99,7 +100,46 @@ const carouselData = [
   </div>
 </div>
 
-<script define:vars={{ carouselData }}>
+<script>
+  const carouselData = [
+    { 
+      image: null, 
+      video: "../images/1851190-uhd_3840_2160_25fps.mp4",
+      text: "Nuestra razón de ser",
+      subtext: "Conectar al cliente con los mejores proveedores de soluciones corporativas."
+    },
+    { 
+      image: "../images/honkong.jpg", 
+      video: null,
+      text: "Para nuestros clientes",
+      subtext: "Nos encargamos de presentarles al socio idóneo según sus requerimientos específicos."
+    },
+    { 
+      image: "../images/ginebra.jpg", 
+      video: null,
+      text: "Enfoque colaborativo",
+      subtext: "Trabajamos en estrecha sinergia con proveedores en Asia, Europa y América."
+    },
+    { 
+      image: "../images/londres.png", 
+      video: null,
+      text: "Enfoque orientado a resultados tangibles",
+      subtext: "Orientados a resultados tangibles, garantizando el éxito empresarial."
+    },
+    { 
+      image: "../images/panama.jpg", 
+      video: null,
+      text: "Transparencia y confianza",
+      subtext: "Creemos firmemente en la transparencia y en forjar relaciones de confianza con nuestros clientes."
+    },
+    { 
+      image: "../images/newyork.jpg", 
+      video: null,
+      text: "Comprensión de necesidades específicas",
+      subtext: "Comprendemos sus necesidades específicas y les brindamos soluciones personalizadas y eficientes."
+    },
+  ];
+
   function startCarousel() {
     const slideContainer = document.getElementById('slide-container');
     const slides = document.querySelectorAll('.carousel-item');
@@ -128,7 +168,7 @@ const carouselData = [
     setInterval(() => {
       currentIndex = (currentIndex + 1) % slides.length;
       updateSlidePosition();
-    }, 14000);
+    }, 5000);
 
     // Set initial slide text
     updateSlidePosition();
