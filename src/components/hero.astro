@@ -48,7 +48,7 @@ const carouselData = [
   <div id="carousel" class="relative z-10 w-full h-full">
     <div id="slide-container" class="flex transition-transform duration-700 ease-in-out w-full h-full">
       {carouselData.map((slide, index) => (
-        <div class="w-full flex-shrink-0 carousel-item h-full">
+        <div class="w-full flex-shrink-0 carousel-item h-full" key={index}>
           {slide.video ? (
             <video autoplay muted loop class="w-full h-full object-cover">
               <source src={slide.video} type="video/mp4">
@@ -60,11 +60,12 @@ const carouselData = [
         </div>
       ))}
     </div>
-    <button id="prevBtn" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
-      ◀
+
+    <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+      &lt;
     </button>
-    <button id="nextBtn" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
-      ▶
+    <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
+      &gt;
     </button>
   </div>
 
@@ -101,46 +102,46 @@ const carouselData = [
 </div>
 
 <script>
-  const carouselData = [
-    { 
-      image: null, 
-      video: "../images/1851190-uhd_3840_2160_25fps.mp4",
-      text: "Nuestra razón de ser",
-      subtext: "Conectar al cliente con los mejores proveedores de soluciones corporativas."
-    },
-    { 
-      image: "../images/honkong.jpg", 
-      video: null,
-      text: "Para nuestros clientes",
-      subtext: "Nos encargamos de presentarles al socio idóneo según sus requerimientos específicos."
-    },
-    { 
-      image: "../images/ginebra.jpg", 
-      video: null,
-      text: "Enfoque colaborativo",
-      subtext: "Trabajamos en estrecha sinergia con proveedores en Asia, Europa y América."
-    },
-    { 
-      image: "../images/londres.png", 
-      video: null,
-      text: "Enfoque orientado a resultados tangibles",
-      subtext: "Orientados a resultados tangibles, garantizando el éxito empresarial."
-    },
-    { 
-      image: "../images/panama.jpg", 
-      video: null,
-      text: "Transparencia y confianza",
-      subtext: "Creemos firmemente en la transparencia y en forjar relaciones de confianza con nuestros clientes."
-    },
-    { 
-      image: "../images/newyork.jpg", 
-      video: null,
-      text: "Comprensión de necesidades específicas",
-      subtext: "Comprendemos sus necesidades específicas y les brindamos soluciones personalizadas y eficientes."
-    },
-  ];
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselData = [
+      { 
+        image: null, 
+        video: "../images/1851190-uhd_3840_2160_25fps.mp4",
+        text: "Nuestra razón de ser",
+        subtext: "Conectar al cliente con los mejores proveedores de soluciones corporativas."
+      },
+      { 
+        image: "../images/honkong.jpg", 
+        video: null,
+        text: "Para nuestros clientes",
+        subtext: "Nos encargamos de presentarles al socio idóneo según sus requerimientos específicos."
+      },
+      { 
+        image: "../images/ginebra.jpg", 
+        video: null,
+        text: "Enfoque colaborativo",
+        subtext: "Trabajamos en estrecha sinergia con proveedores en Asia, Europa y América."
+      },
+      { 
+        image: "../images/londres.png", 
+        video: null,
+        text: "Enfoque orientado a resultados tangibles",
+        subtext: "Orientados a resultados tangibles, garantizando el éxito empresarial."
+      },
+      { 
+        image: "../images/panama.jpg", 
+        video: null,
+        text: "Transparencia y confianza",
+        subtext: "Creemos firmemente en la transparencia y en forjar relaciones de confianza con nuestros clientes."
+      },
+      { 
+        image: "../images/newyork.jpg", 
+        video: null,
+        text: "Comprensión de necesidades específicas",
+        subtext: "Comprendemos sus necesidades específicas y les brindamos soluciones personalizadas y eficientes."
+      },
+    ];
 
-  function startCarousel() {
     const slideContainer = document.getElementById('slide-container');
     const slides = document.querySelectorAll('.carousel-item');
     const prevBtn = document.getElementById('prevBtn');
@@ -172,7 +173,11 @@ const carouselData = [
 
     // Set initial slide text
     updateSlidePosition();
-  }
-
-  document.addEventListener('DOMContentLoaded', startCarousel);
+  });
 </script>
+
+<style>
+  .carousel-item {
+    transition: transform 0.5s ease-in-out;
+  }
+</style>
