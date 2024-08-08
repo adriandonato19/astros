@@ -1,4 +1,5 @@
 ---
+import { content } from "../../tailwind.config.cjs";
 import Container from "../components/container.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -10,16 +11,40 @@ const services = [
     image: "/images/consulting.jpg"
   },
   {
-    title: "ADMINISTRACION DE PAGOS y SOLUCIONES DE COBRANZA",
-    icon: "fas fa-money-check-alt",
-    content: "Las transacciones comerciales en la actualidad se encuentran constantemente sometidas a un cada vez mayo escrutinio, a consecuencia de las nuevas políticas regulatorias que emanan de las autoridades gubernamentales a nivel global. WAICA ofrece a sus clientes empresariales una serie de mecanismos y herramientas que permiten dinamizar y fluidificar los procesos de pago de una manera eficiente y segura. En WAICA, entendemos los desafíos que enfrentan las empresas al gestionar la recuperación de acreencias provenientes de operaciones de comercio internacional y servicios de intermediación. Nuestro equipo de expertos ofrece soluciones personalizadas para optimizar sus procesos de cobranza internacional, garantizando la eficiencia y minimizando los riesgos asociados a las transacciones transfronterizas.",
-    image: "/images/gestionpagos.jpg"
-  },
+  "title": "ADMINISTRACIÓN DE PAGOS Y SOLUCIONES DE COBRANZA",
+  "icon": "fas fa-money-check-alt",
+  "content":[ "Las transacciones comerciales en la actualidad están sometidas a un mayor escrutinio debido a las nuevas políticas regulatorias globales En WAICA, ofrecemos una serie de mecanismos y herramientas para dinamizar y fluidificar los procesos de pago de manera eficiente y segura.",
+   "                     " ,["Entendemos los desafíos que enfrentan las empresas al gestionar la recuperación de acreencias provenientes de comercio internacional y servicios de intermediación. Nuestro equipo de expertos brinda soluciones personalizadas para optimizar los procesos de cobranza internacional, garantizando eficiencia y minimizando los riesgos asociados a las transacciones transfronterizas."]],
+  "image": "/images/gestionpagos.jpg"
+},
+
   {
-    title: "SOLUCIONES DE COBRANZA INTERNACIONAL",
+    title: "SOLUCIONES DE EMISION  Y MONETIZACION DE SBLC",
     icon: "fas fa-globe",
-    content: "En WAICA, entendemos los desafíos que enfrentan las empresas al gestionar la recuperación de acreencias provenientes de operaciones de comercio internacional y servicios de intermediación. Nuestro equipo de expertos ofrece soluciones personalizadas para optimizar sus procesos de cobranza internacional, garantizando la eficiencia y minimizando los riesgos asociados a las transacciones transfronterizas.",
-    image: "/images/pagointernacional.png"
+    content: `WAICA es un agente autorizado de una entidad dedicada a la gestión de  estructuración  de emisiones de instrumentos financieros y su respectiva utilización para obtener líneas de crédito  que pueden ser monetizadas para invertir en  el desarrollo de proyectos que requieren capitalización, haciendo uso de  una modalidad propietaria que le ofrece resultados eficaces, rentables y sobre todo  garantizados por una gestión altamente profesional,  transparente y segura.  
+    
+Nuestro asociado, actúa como corresponsal con los principales bancos de todo el mundo para gestionar a su favor la emisión de una carta de crédito stand-by (SBLC) como colateral o garantía para respaldar una inversión de su empresa.  
+
+Las características más sobresalientes del modelo que promovemos son las siguientes: 
+
+1) Emisor SBLC: Banco internacional con calificación de riesgo “grado de inversión”  
+
+2) Agente  Monetizador SBLC: Línea de Crédito otorgada por Fondos de Inversión de New York, Dubai o Londres, 
+
+3) Obligación de  reembolso de la línea de crédito otorgada: ninguna  
+
+4) Valor de la SBLC: No menos de USD$100 millones 
+
+ 4) Respaldo/colateral: Fondos líquidos en Dólares de los Estados Unidos de América (US$), representados en la SBLC.  
+
+5) Plazo: No menos de 12 meses y 1 día  
+
+6) Normativa aplicable: Reglamento de la Cámara de Comercio Internacional  
+
+ 
+
+Consúltenos sobre los requisitos  para aplicar, los  procedimientos y costos. `,
+    image: "/images/sblc.jpg"
   },
   {
     title: "ASISTENCIA EN TRAMITES BANCARIOS Y FINANCIEROS",
@@ -85,6 +110,7 @@ const services = [
               </div>
               <div class="p-6">
                 <p class="text-black text-sm mb-4 content text-justify">{service.content}</p>
+                <p class="text-black text-sm mb-4 content text-justify">{service.content2}</p>
                 <button class="bg-yellow-400 text-white px-4 py-2 rounded-full hover:bg-yellow-300 transition duration-300 font-semibold">
                   Leer más
                 </button>
@@ -134,3 +160,5 @@ const services = [
     });
   });
 </script>
+
+

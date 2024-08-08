@@ -44,7 +44,7 @@ const carouselData = [
 ];
 ---
 
-<div class="relative w-screen h-screen max-w-screen-xl max-h-screen-xl mx-auto overflow-hidden">
+<div class="relative w-full h-screen overflow-hidden">
   <div id="carousel" class="relative z-10 w-full h-full">
     <div id="slide-container" class="flex transition-transform duration-700 ease-in-out w-full h-full">
       {carouselData.map((slide, index) => (
@@ -169,7 +169,7 @@ const carouselData = [
     setInterval(() => {
       currentIndex = (currentIndex + 1) % slides.length;
       updateSlidePosition();
-    }, 5000);
+    }, 8000);
 
     // Set initial slide text
     updateSlidePosition();
