@@ -1,51 +1,51 @@
 {
 	"hero": {
-		"title": "Sviluppo web potenziato!",
-		"subtitle": "Liberare il Potere del Web: Combina Astro, Tailwind CSS e Alpine.js per Semplificare il Tuo Processo di Sviluppo Web.",
-		"globe_title": "Crea Siti Web Sorprendenti ad Alte Prestazioni con Facilità e Velocità.",
-		"main_button_text": "Scarica su github",
-		"secondary_button_text": "Vai a versione animata"
+		"title": "WORLDWIDE ADVISORS OF INVESTMENTS AND CAPITAL, LLC",
+		"subtitle": "Prestación de servicios y soluciones de calidad en ambientes corporativos, comerciales y financieros.",
+		"globe_title": "Obtenga mayores beneficios a un menor coste con estrategias de inteligencia de negocios",
+		"main_button_text": "Asesoría personalizada",
+		"secondary_button_text": "Ir a la versión animada"
 	},
 	"hero_animated": {
-		"secondary_button_text": "Vai a versione base"
+		"secondary_button_text": "Ver nuestras soluciones"
 	},
 	"header": {
-		"features": "Funzionalità",
-		"pricing": "Prezzi",
+		"features": "Features",
+		"pricing": "Pricing",
 		"blog": "Blog",
-		"contact": "Contatti",
-		"primary_button_text": "Scarica",
+		"contact": "Contacts",
+		"primary_button_text": "Download",
 		"secondary_button_text": "Login"
 	},
 	"features": {
-		"learn_more": "Scopri di più",
-		"title": "Funzionalità",
-		"subtitle": "Tutti glil strumenti di cui hai bisogno",
-		"description": "Astro è un generatore di siti statici ad alte prestazioni che si integra perfettamente con Tailwind CSS e Alpine.js. Ti permette di costruire siti web con facilità e velocità, senza sacrificare le prestazioni.",
-		"astro": "Astro è il framework web all-in-one progettato per la velocità. Preleva i tuoi contenuti da qualsiasi luogo e distribuiscili ovunque, il tutto alimentato dai tuoi componenti UI e librerie preferiti.",
-		"alpine": "Alpine è uno strumento robusto e minimale per comporre comportamenti direttamente nel tuo markup. Pensalo come jQuery per il web moderno. Inserisci un tag script e inizia.",
-		"tailwind": "Un framework CSS basato su utility pieno di classi che possono essere composte per costruire qualsiasi design, direttamente nel tuo markup.",
-		"localization": "Un'integrazione di i18next con Astro + alcuni componenti utilità per aiutarti a tradurre i tuoi siti web Astro!",
-		"light_dark_mode": "Modalità Dark basata sulle classi di Tailwind.",
-		"giscus": "Un sistema di commenti alimentato da GitHub Discussions. Lascia che i visitatori lascino commenti e reazioni sul tuo sito web tramite GitHub!",
-		"decapcms": "Gestione dei contenuti open source per il tuo flusso di lavoro Git",
-		"rss": "RSS feed generato da @astrojs/rss",
-		"articlegenerator": "Usa l'inteligenza artificiale per generare gli articoli del tuo blog",
+		"learn_more": "Más información",
+		"title": "Nuestras Soluciones",
+		"subtitle": "Todo lo que necesita",
+		"description": "En WORLDWIDE ADVISORS OF INVESTMENTS AND CAPITAL, LLC (WAICA), actuamos como un puente sólido que conecta a los proveedores de servicios corporativos con los clientes, ofreciendo soluciones integrales de consultoría adaptadas a sus necesidades particulares.",
+		"astro": "Nuestra razón de ser es actuar como un puente sólido que conecta a los proveedores de servicios corporativos con los clientes, ofreciendo soluciones integrales de consultoría adaptadas a las necesidades particulares de cada uno.",
+		"alpine": "Para nuestros clientes, nos encargamos de presentarles al socio idóneo según sus requerimientos específicos. Contamos con una extensa red y vasta experiencia para vincular a empresas e individuos con las soluciones perfectas para ellos.",
+		"tailwind": "En WAICA adoptamos un enfoque colaborativo para la consultoría. Trabajamos en estrecha sinergia con diversas instituciones en Asia, Europa y América, con el objetivo de brindar los servicios corporativos, legales y financieros más destacados.",
+		"localization": "Nuestro enfoque está orientado a resultados tangibles, sin costos iniciales, y está diseñado para impulsar el éxito empresarial y encontrar la solución ideal para las necesidades de cada cliente.",
+		"light_dark_mode": "Creemos firmemente en la transparencia y en forjar relaciones de confianza con nuestros clientes.",
+		"giscus": "Nos esforzamos por comprender a profundidad sus objetivos y necesidades específicas, para luego brindarles soluciones personalizadas y eficientes.",
+		"decapcms": "Nuestra meta es ser un aliado estratégico en su camino hacia el éxito empresarial.",
+		"rss": "Explore nuestras soluciones para obtener más información sobre nuestra propuesta de valor.",
+		"articlegenerator": "Nuestro equipo se compromete a entregar resultados sobresalientes que superan las expectativas, gracias a un enfoque colaborativo y transparente.",
 		"image": "/images/features-main.png"
 	},
 	"faq": {
-		"title": "Domande frequenti"
+		"title": "Preguntas frecuentes"
 	},
 	"newsletter": {
-		"title": "Sottoscriviti alla nostra newsletter",
-		"subtitle": "Ricevi le notifiche per gli ultimi aggiornamenti e novità.",
-		"input_placeholder": "Inserisci la tua email",
-		"button_text": "Sottoscriviti",
-		"privacy": "Ci importa della tua privacy. Leggi la nostra",
-		"privacy_link": "Privacy Policy."
+		"title": "Suscribete a nuestro boletin",
+		"subtitle": "Aprende de las novedades en la industria",
+		"input_placeholder": "Tu correo",
+		"button_text": "Subscribete",
+		"privacy": "Nos preocupamos por tus datos",
+		"privacy_link": "Politica de privacidad"
 	},
 	"blog": {
-		"prev": "Precedente",
-		"next": "Successiva"
+		"prev": "Prev",
+		"next": "Next"
 	}
 }
